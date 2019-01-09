@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles/form_1.css" />
+    <title>Form Design Patterns</title>
+  </head>
+  <body>
+    <section>
+      <form>
+        <legend>Add Delivery Address</legend>
+        <p>Required fields are followed by <abbr title="required">*</abbr>.</p>
+        <!-- It must be at beginning to make sure that assistive technologies such as screen readers 
+            will display or vocalize it to the user before they find a required element. 
+            That way, they will know what the asterisk means. 
+            A screen reader will speak the star as "star" or "required" https://mzl.la/2Fmrj44 -->
+        <fieldset>
+          <div>
+            <label for="firstname"
+              >First Name: <abbr title="required">*</abbr></label
+            >
+            <input id="firstname" type="text" name="firstname" />
+          </div>
+          <div>
+            <label for="secondname"
+              >Second Name: <abbr title="required">*</abbr></label
+            >
+            <input id="secondname" type="text" name="secondname" />
+          </div>
+          <div>
+            <label for="copy-fullname">Paste my name</label>
+            <input
+              type="checkbox"
+              id="paste-fullname"
+              name="paste-fullname"
+              value="1"
+            />
+          </div>
+        </fieldset>
+      </form>
+    </section>
+  </body>
+</html>

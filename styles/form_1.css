@@ -1,0 +1,6 @@
+body {
+  padding: 0;
+  margin: 1rem;
+  border: 1px solid blue;
+  min-height: 90vh;
+}
