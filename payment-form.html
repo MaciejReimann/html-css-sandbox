@@ -9,7 +9,7 @@
     <!-- Following example from MDN: https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/How_to_structure_an_HTML_form#Active_learning_building_a_form_structure -->
   </head>
   <body>
-    <form>
+    <form autocomplete="on" id="payment-form">
       <section>
         <h2>Contact Information</h2>
 
@@ -37,14 +37,28 @@
           <label for="name">
             <span>Name:</span> <strong><abbr title="required">*</abbr></strong>
           </label>
-          <input type="text" id="name" name="uername" />
+          <input
+            type="text"
+            id="name"
+            autocomplete="name"
+            autofocus="true"
+            list="my-names"
+            tabindex="1"
+          />
         </p>
         <p>
           <label for="mail">
             <span>Mail:</span> <strong><abbr title="required">*</abbr></strong>
           </label>
-          <input type="text" id="mail" name="usermail" />
+          <input type="email" id="mail" name="usermail" />
         </p>
+        <fieldset>
+          <legend>Address</legend>
+          <label for="city">
+            <span>City:</span> <strong><abbr title="required">*</abbr></strong>
+            <input type="text" id="name" autocomplete="name" />
+          </label>
+        </fieldset>
         <p>
           <label for="pwd">
             <span>Password:</span>
@@ -52,6 +66,10 @@
           </label>
           <input type="password" id="pwd" name="password" />
         </p>
+        <datalist id="my-names">
+          <option value="Karl Marx"></option>
+          <option value="Friedrich Nietzsche"></option>
+        </datalist>
       </section>
       <section>
         <fieldset>
@@ -71,11 +89,13 @@
               <strong><abbr title="required">*</abbr></strong>
               <em>formatted as mm/dd/yy</em>
             </label>
-            <input type="date" id="date" name="expiration" />
+            <input type="date" id="date" name="expiration" tabindex="0" />
           </p>
         </fieldset>
       </section>
       <p><button type="submit">Pay</button></p>
     </form>
+
+    <input type="text" form="payment-form" class="custom" tabindex="2" />
   </body>
 </html>
